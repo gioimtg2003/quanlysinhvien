@@ -4,17 +4,17 @@ import model.addStudent;
 import model.student;
 
 import java.util.Scanner;
-
 public class optionAdd {
-    private static student[] infoStudent;
-
+    private  student[] infoStudent;
+    private  Scanner sc = new Scanner(System.in);
     /**
      * Thêm một hoặc nhiều sinh viên vào file students.txt
      * 
      * @return student
      * @throws java.io.IOException
      */
-    public static void addStudent() throws java.io.IOException, InterruptedException {
+    // phương thức này sẽ cho phép nhập các thông tin của sinh viên sau đó thêm vào file students.txt
+    public  void addStudent() throws java.io.IOException, InterruptedException {
         String title = """
                 \t|---------------------------------|
                 \t|       Add to the student        |
@@ -22,7 +22,7 @@ public class optionAdd {
                 """;
         String name, birthDay, gtinh, address, studentId, className, Khoa, phoneNumber;
         int n;
-        Scanner sc = new Scanner(System.in);
+        
         System.out.println(title);
         System.out.print("Enter the number of students: ");
         n = sc.nextInt();
@@ -36,9 +36,9 @@ public class optionAdd {
             System.out.print("Enter the Name: ");
             name = sc.nextLine();
             Exceptions.inputProperties(name, "name");
-            System.out.print("Enter the BirthDay: ");
+            System.out.print("Enter the BirthDay (DD/MM/YY): ");
             birthDay = sc.nextLine();
-            Exceptions.inputProperties(birthDay, "birthday");
+            Exceptions.inputBirthDay(birthDay);
             System.out.print("Enter the gender: ");
             gtinh = sc.nextLine();
             Exceptions.inputProperties(gtinh, "gender");
@@ -56,13 +56,16 @@ public class optionAdd {
             Exceptions.inputProperties(Khoa, "Khoa");
             System.out.print("Enter the phone Number: ");
             phoneNumber = sc.nextLine();
+
             Exceptions.inputProperties(phoneNumber, "phoneNumber");
             infoStudent[i] = new student(name, birthDay, gtinh, address, studentId, className, Khoa, phoneNumber);
             addStudent.add(infoStudent[i].getName(), infoStudent[i].getBirthDay(), infoStudent[i].getGtinh(),
                     infoStudent[i].getAddress(), infoStudent[i].getStudentId(), infoStudent[i].getClassName(),
                     infoStudent[i].getKhoa(), infoStudent[i].getPhoneNumber());
-            clear.clearScreen();
+            new display().loading1();  
+            System.out.println("\rSuccessfully!      ") ;
+            
         }
-        sc.close();
     }
+    
 }

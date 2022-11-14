@@ -5,12 +5,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 
-//delete a student from the file students.txt
 public class removeStudent {
-    public static final void remove(String id) throws java.io.IOException {
-
-        File file = new File("C:\\code java\\qlysinhvien\\src\\model\\data\\students.txt");
-        FileReader fr = new FileReader(file);
+    //xóa sinh viên ra khỏi file students.txt
+    public static  void remove(String id) throws java.io.IOException {
+        FileReader fr = new FileReader(student.file);
         BufferedReader br = new BufferedReader(fr);
         String line;
         String input = "";
@@ -21,7 +19,7 @@ public class removeStudent {
         }
         br.close();
         fr.close();
-        file.delete();
+        student.file.delete();
         File file2 = new File("C:\\code java\\qlysinhvien\\src\\model\\data\\students.txt");
         file2.createNewFile();
         FileWriter fw = new FileWriter(file2);

@@ -1,15 +1,17 @@
 package view;
 
 public class main {
+    private static java.util.Scanner sc = new java.util.Scanner(System.in);
     public main() throws java.io.IOException, InterruptedException {
-        
-        new loading().InramanHinh();
-        menu a = new menu();
+        clear.clearScreen();
+        display view = new display();
+        view.loading2();
         options b = new options();
         while (true) {
             clear.clearScreen();
-            a.InramanHinh();
+            view.InramanHinh();
             b.getOption();
+            sc.nextLine();
         }
 
     }

@@ -1,12 +1,13 @@
 package model;
-
+import java.io.File;
+// lớp student sẽ kế thừa các thuộc tính của lớp person
 public class student extends person {
     private String studentId;
     private String className;
     private String address;
     private String phoneNumber;
     private String Khoa;
-
+    public static File file = new File("C:\\code java\\qlysinhvien\\src\\model\\data\\students.txt");
     public student(String name, String birthDay, String gtinh, String address, String studentId, String className,
             String Khoa, String phoneNumber) {
         super(name, birthDay, gtinh);
@@ -16,7 +17,7 @@ public class student extends person {
         this.Khoa = Khoa;
         this.phoneNumber = phoneNumber;
     }
-
+    
     public void setAddress(String address) {
         this.address = address;
     }

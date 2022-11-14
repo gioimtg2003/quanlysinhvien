@@ -1,29 +1,30 @@
 package model;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
 public class searchStudents {
-    private String idStudent;
+    private String className;
     private String khoa;
-    private File file = new File("C:\\code java\\qlysinhvien\\src\\model\\data\\students.txt");
-    private FileReader fr ;
+    private FileReader fr;
     private BufferedReader br;
 
-    public searchStudents(String idStudent, String khoa) throws java.io.IOException {
-        this.idStudent = idStudent;
+    // hàm tạo với đầu vào là tên lớp và tên khoa
+    public searchStudents(String className, String khoa) throws java.io.IOException {
+        this.className = className;
         this.khoa = khoa;
-        fr = new FileReader(file);
+        fr = new FileReader(student.file);
         br = new BufferedReader(fr);
     }
 
+    // hàm tìm kiếm sinh viên theo tên lớp. Kiểu trả về là ArrayList mỗi phần tử
+    // chứa tất cả thông tin của sinh viên
     public ArrayList<String> searchStudentByClassName() throws java.io.IOException {
         ArrayList<String> listStudent = new ArrayList<String>();
         String line = br.readLine();
         while (line != null && line != "") {
-            if (line.contains(idStudent)) {
+            if (line.contains(className)) {
                 listStudent.add(line);
             }
             line = br.readLine();
@@ -31,6 +32,8 @@ public class searchStudents {
         return listStudent;
     }
 
+    // hàm tìm kiếm theo tên khoa kiểu trả về là ArrayList mỗi phần tử chứa tất cả
+    // thông tin của sinh viên
     public ArrayList<String> searchStudentByFaculty() throws java.io.IOException {
         ArrayList<String> listStudent = new ArrayList<String>();
         String line = br.readLine();
@@ -42,16 +45,5 @@ public class searchStudents {
         }
         return listStudent;
     }
-    // public static void main(String[] args) throws java.io.IOException {
-    // searchStudents a = new searchStudents("1", "2222");
-    // ArrayList<String> listStudentById = new ArrayList<String>();
-    // listStudentById = a.searchStudentByID();
-    // if (listStudentById.size() > 0) {
-    // for (int i = 0; i < listStudentById.size(); i++) {
-    // System.out.println(listStudentById.get(i).split("_")[0]);
-    // }
-    // } else {
-    // System.out.println("Không tìm thấy sinh viên");
-    // }
-    // }
+
 }

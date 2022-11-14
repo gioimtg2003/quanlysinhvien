@@ -1,11 +1,11 @@
 import random
-Họ = ["Nguyễn", "Phạm", "Trần", "Hồ", "Đinh", "Phan"]
-Lót = ["Công", "Thị", "Văn", "Hoàng", "Tấn"]
-Tên = ["Đức", "Hải", "Hà", "Anh", "Tuấn", "Thiên",
-       "Trang", "Đạt", "Thành", "Huy", "Minh", "Giới"]
-tỉnh = ["An Giang", "Bắc Giang", "Bắc Kạn", "Bến Tre", "Bình Định", "Quảng Ngãi",
-        "Bình Dương", "Bình Thuận", "Hà Nội", "Sài Gòn", "Khánh Hòa", "Phú Yên"]
-ngành = ["TT", "KT", "QT", "NA", "TD", "VT"]
+Họ = ["Nguyen", "Pham", "Tran", "Ho", "Dinh", "Phan"]
+Lót = ["Cong", "Thi", "Van", "Hoang", "Tan"]
+Tên = ["Duc", "Hai", "Ha", "Anh", "Tuan", "Thien",
+       "Trang", "Dat", "Thanh", "Huy", "Minh", "Gioi", "Phat"]
+tỉnh = ["An Giang", "Bac Giang", "Bac Ninh", "Ben Tre", "Binh Dinh", "Quang Ngai",
+        "Tp HCM", "Binh Thuan", "Ha Noi",  "Khanh Hoa", "Phu Yen", "Binh Duong"]
+ngành = ["TT", "KT", "QT", "VT"]
 khoa = ["KTHK", "DDT", "QTKD"]
 gtinh = ["male", "female"]
 for i in range(1000):
@@ -20,7 +20,7 @@ for i in range(1000):
         " " + random.choice(Tên)
     phone = "036" + str(random.randint(5000000, 9999999))
     #write to file
-    with open("C:\\code java\\qlysinhvien\\src\\model\\data\\students2.txt", "a", encoding="utf-8") as f:
+    with open("C:\\code java\\qlysinhvien\\src\\model\\data\\students.txt", "a", encoding="utf-8") as f:
         f.write(name + "_" + birthDay+"_"+str(random.choice(gtinh)) + "_" + random.choice(tỉnh) +"_" + idStudent+"_" + className + "_" + random.choice(khoa) + "_" + phone + "\n")
     # with open("data.txt", "utf-8", "a") as f:
     #     f.write(name + "_" + birthDay+"_"+str(random.choice(gtinh)) + "_" + random.choice(tỉnh) +"_" + idStudent+"_" + className + "_" + random.choice(khoa) + "_" + phone + "\n")

@@ -1,5 +1,5 @@
 package model;
-
+// lớp trừu tượng các thuộc tính của con người
 public abstract class person {
     private String name;
     private String birthDay;

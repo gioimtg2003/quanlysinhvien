@@ -6,19 +6,27 @@ import model.searchStudents;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public interface optionRemove {
-    public static void removeStudent() throws java.io.IOException {
+public class optionRemove {
+    private Scanner sc = new Scanner(System.in);
+    public optionRemove(){
+
+    }
+    /**
+     * phương thức này sẽ xóa một sinh viên trong danh sách
+     * @throws java.io.IOException
+     */
+    public  void removeStudent() throws java.io.IOException, InterruptedException {
         String title = """
                 \t|---------------------------------|
                 \t|   Delete student from the data  |
                 \t|---------------------------------|
                 """;
         String studentId;
-        Scanner sc = new Scanner(System.in);
+        
         System.out.println(title);
         System.out.print("Enter the student number: ");
-        studentId = sc.nextLine();
-        
+        studentId = sc.next();
+        sc.nextLine();
         ArrayList<String> listStudent = new ArrayList<String>();
         searchStudents a = new searchStudents(studentId, "");
         listStudent = a.searchStudentByClassName();
@@ -34,16 +42,14 @@ public interface optionRemove {
             String ans = sc.nextLine();
             if (ans.equals("Y") || ans.equals("y")) {
                 removeStudent.remove(studentId);
-                System.out.println("Delete successfully!");
+                new display().loading1();
+                System.out.println("\rDelete successfully!   ");
             } else if (ans.equals("N") || ans.equals("n")) {
                 System.out.println("Delete failed!");
             }
         }
-        sc.close();
 
     }
 
-    public static void main(String[] args) throws java.io.IOException {
-        removeStudent();
-    }
+
 }
