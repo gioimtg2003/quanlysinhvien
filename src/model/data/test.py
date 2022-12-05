@@ -6,7 +6,7 @@ Tên = ["Duc", "Hai", "Ha", "Anh", "Tuan", "Thien",
 tỉnh = ["An Giang", "Bac Giang", "Bac Ninh", "Ben Tre", "Binh Dinh", "Quang Ngai",
         "Tp HCM", "Binh Thuan", "Ha Noi",  "Khanh Hoa", "Phu Yen", "Binh Duong"]
 ngành = ["TT", "KT", "QT", "VT"]
-khoa = ["KTHK", "DDT", "QTKD"]
+khoa = ["KTHK", "DDT", "QTKD",]
 gtinh = ["male", "female"]
 for i in range(1000):
     khóa = str(random.randint(16, 22))
